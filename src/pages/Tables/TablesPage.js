@@ -1,13 +1,15 @@
-import React, {useState} from 'react'
+import React/*, {useState}*/ from 'react'
 import PageHeader from '../../components/PageHeader'
 import ListAltIcon from '@material-ui/icons/ListAlt';
-import axios from "axios";
+// import axios from "axios";
 
 import SubjectsTable from './SubjectsTable';
 import CoursesTable from '../CoursesTable';
-import ClassGrid from '../ClassGrid';
+// import ClassGrid from '../ClassGrid';
 
 export default function TablesPage() {
+    
+    let token;
     
     return (
         <>
@@ -19,13 +21,23 @@ export default function TablesPage() {
             />
             <SubjectsTable/>
             <CoursesTable/>
-            <ClassGrid/>
-            <div>
-                Axis Get:
+            {/* <ClassGrid/> */}
+            {/* <div>
+                Axios Token:
                 {
-                    console.log(axios.get('http://localhost:22639/api/' + 'User/subjects'))
+                    token = (axios.get('http://localhost:22639/token?username=admin&password=admin'))
                 }
-            </div>
+            </div> */}
+            {/* <div>
+                Axios Get:
+                {
+                    axios.get('http://localhost:22639/api/' + 'User/subjects', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+                }
+            </div> */}
         </>
     )
 }

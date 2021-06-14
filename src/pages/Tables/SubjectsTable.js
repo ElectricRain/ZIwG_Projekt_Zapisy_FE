@@ -5,6 +5,7 @@ import useTable from '../../components/controls/useTable';
 import * as subjectService from '../../services/subjectService';
 import Controls from '../../components/controls/Controls';
 import { Search } from '@material-ui/icons';
+import ClassGrid from '../ClassGrid';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
@@ -93,6 +94,8 @@ export default function SubjectsTable() {
                 </TblContainer>
                 <TblPagination/>
             </Paper>
+
+            <ClassGrid records={records}/>
         </>
     )
 }

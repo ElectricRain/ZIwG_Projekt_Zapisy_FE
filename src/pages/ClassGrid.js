@@ -77,18 +77,19 @@ class ClassGrid extends Component {
     }
 
     render () {
+        // console.log(this.props.records);
     
-        const lessons = this.state.lessons.map((lesson) => {
+        const lessons = this.props.records.map((lesson) => {
 
             const day = lesson.day;
 
             const percentVer =  (day)/8*100
 
-            const splittedTime = lesson.start.split(":");
+            const splittedTime = lesson.startHour.split(":");
             const hour = parseInt(splittedTime[0], 10);
             const minutes = parseInt(splittedTime[1], 10);
 
-            const splittedTimeFinish = lesson.finish.split(":");
+            const splittedTimeFinish = lesson.endHour.split(":");
             const hourFinish = parseInt(splittedTimeFinish[0], 10);
             const minutesFinish = parseInt(splittedTimeFinish[1], 10);
 
@@ -109,13 +110,13 @@ class ClassGrid extends Component {
             };
 
             switch(lesson.type) {
-                case 'C':
+                case '0':
                     mystyle.backgroundColor = "#dada25";
                     break;
-                case 'L':
+                case '1':
                     mystyle.backgroundColor = "#2525da";
                     break;
-                case 'S':
+                case '2':
                     mystyle.backgroundColor = "#25dada";
                     break;
                 default:
